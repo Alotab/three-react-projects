@@ -10,6 +10,8 @@ const PokeCard = (props) => {
     const { selectedPokemon } = props
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [skill, setSkill] = useState(null)
+    const [loadingSkill, setLoadingSkill] = useState(false)
 
     const {name, height, abilities, stats, types, moves, sprites} = data || {}
 
@@ -18,6 +20,45 @@ const PokeCard = (props) => {
         if (['versions', 'other'].includes(val)) { return false }
         return true
     })
+
+    async function fetchMoveData(move, moveUrl) {
+        if (loadingSkill || !localStorage || !moveUrl) {return}
+
+        // check cache for move
+        let c ={}
+        if (localStorage.getItem('pokemon-moves')) {
+            c = JSON.parse(localStorage.getItem('pokemon-moves'))
+        }
+
+        if (move in c) {
+            setSkill(c[move])
+            console.log('Find move in cache')
+            return
+        }
+
+        try {
+            setLoading(true)
+            const res = fetch(moveUrl)
+            const moveData = res.json()
+            console.log('Fetched move from API', moveData)
+            const description = moveData?.flavour_text_entries.filter(val => {
+                return val.version_group.name = 'firered-leafgreen'
+            })[0]?.flavor_text
+
+            const skillData = {
+                name: move,
+                description
+            }
+            setSkill(skillData)
+            c[move] = skillData
+            localStorage.setItem('pokemon-moves', JSON.stringify(c))
+
+        } catch (err) {
+            console.log(err)
+        } finally {
+            setLoadingSkill(false)
+        }
+
 
     useEffect(() => {
         //if loading, exit logic
@@ -35,6 +76,7 @@ const PokeCard = (props) => {
         if (selectedPokemon in cache) {
             //read cache
             setData(cache[selectedPokemon])
+            console.log('Found pokemon in cache')
             return
         }
 
@@ -75,7 +117,23 @@ const PokeCard = (props) => {
 
     return (
         <div className="poke-card">
-            <Modal></Modal>
+            {/* call the modal component like html tag and anything in it becomes the children 
+            render the modal only when we have a skill
+            setKill(null) means if the user clicks on the displayed modal, the skill becomes 
+            and null/false and the modal goes away */}
+            {skill && ( 
+                <Modal handleCloseModal={() => { setSkill(null)}}>
+                    <div>
+                        <h6>Name</h6>
+                        <h2></h2>
+                    </div>
+                    <div>
+                        <h6>Description</h6>
+                        <p>write ...</p>
+                    </div>
+
+                </Modal>
+            )}
             <div>
                 <h4>#{getFullPokedexNumber(selectedPokemon)}</h4>
                 <h2>{name}</h2>
