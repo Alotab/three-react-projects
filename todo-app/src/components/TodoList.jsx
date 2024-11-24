@@ -14,14 +14,14 @@ const TodoList = (props) => {
   return (
       <>
         {
-          filterTodosList.map((todos, todoIndex) => {
+          filterTodosList.map((todo, todoIndex) => {
             return (
               // pass down all the props from TodoList to TodoCard
               <TodoCard 
               key={todoIndex}
-              todoIndex={todoIndex}
+              todoIndex={todos.findIndex(val => val.input == todo.input)}
               {...props}
-              todo={todos}/>
+              todo={todo}/>
             )
           })
         }
