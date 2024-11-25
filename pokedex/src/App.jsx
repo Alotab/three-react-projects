@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <SideNave selectedPokemon={selectedPokemon} setSelectedPokemon={selectedPokemon}/>
+      <SideNave selectedPokemon={selectedPokemon} setSelectedPokemon={setSelectedPokemon}/>
       <PokeCard selectedPokemon={selectedPokemon}/>
     </>
   )
