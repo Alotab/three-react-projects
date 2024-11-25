@@ -1,12 +1,14 @@
 import { useState } from "react"
 import Modal from "./Modal"
 import Authentication from "./Authentication"
+import { useAuth } from "../context/AuthContext"
 
 
 const Layout = (props) => {
     const { children } = props
     const [showModal, setShowModal] = useState(false)
-    // const { globalUser, logout } = useAuth()
+    const { globalUser, logout } = useAuth()
+  
 
  
 
@@ -16,8 +18,8 @@ const Layout = (props) => {
                 <h1 className="text-gradient">CAFFIEND</h1>
                 <p>For Coffee Insatiates</p>
             </div>
-            {'' ? (
-                <button>
+            {globalUser ? (
+                <button onClick={logout}>
                     <p>Logout</p>
                 </button>
             ) : (
@@ -35,13 +37,18 @@ const Layout = (props) => {
             <a target="_blank" href="https://github.com/Alotab/three-react-projects/tree/main/caffiend"> Alotab</a> <br />using the <a href="https://www.fantacss.smoljames.com" target="_blank">FantaCSS</a> design library.<br />Check out the project on <a target="_black" href="https://www.github.com/jamezmca/reactjs-full-course">GitHub</a>!</p>
         </footer>
     )
+
+    
+    function handleCloseModal() {
+        setShowModal(false)
+    }
         
  
   return (
     <>
         {showModal && 
-            (<Modal handleCloseModal={() => {setShowModal(false)}}>
-                <Authentication />
+            (<Modal handleCloseModal={handleCloseModal}>
+                <Authentication handleCloseModal={handleCloseModal}/>
             </Modal>)
         }
         {header}

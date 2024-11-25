@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-// import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 export default function Authentication(props) {
     const { handleCloseModal } = props
     const [isRegistration, setIsRegistration] = useState(false)
@@ -9,7 +9,8 @@ export default function Authentication(props) {
     const [isAuthenticating, setIsAuthenticating] = useState(false)
     const [error, setError] = useState(null)
 
-    // const { signup, login } = useAuth()
+    // import functions from Authcontext -- global export
+    const { signup, login } = useAuth()
 
     async function handleAuthenticate() {
         if (!email || !email.includes('@') || !password || password.length < 6 || isAuthenticating) { return }
