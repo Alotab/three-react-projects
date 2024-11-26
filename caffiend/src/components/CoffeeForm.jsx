@@ -2,6 +2,9 @@ import { useState } from "react"
 import { coffeeOptions } from "../utils"
 import Modal from "./Modal"
 import Authentication from "./Authentication"
+import { useAuth } from "../context/AuthContext"
+import { doc, setDoc } from "firebase/firestore"
+import { db } from "../../firebase"
 
 const CoffeeForm = (props) => {
   const { isAuthenticated } = props
@@ -11,14 +14,58 @@ const CoffeeForm = (props) => {
   const [coffeeCost, setCoffeeCost] = useState(0)
   const [hour, setHour] = useState(0)
   const [min, setMin] = useState(0)
+
+  const { globalData, setGlobalData, globalUser } = useAuth()
   
-  function handleSubmitForm() {
+  async function handleSubmitForm() {
     if(!isAuthenticated) {
       setShowModal(true)
     }
-    console.log(selectedCoffee, coffeeCost, hour, min)
+
+    // define a guard cloause that only submits the form if its is completed
+    if (!selectedCoffee) {
+      return
+    }
+
+    try {
+      // then we are goung to create a new data object
+      const newGlobalData = {
+        ...(globalData || {})
+      }
+
+      const nowTime = Date.now()
+
+      const timeToSubtract = [hour * 60 * 60 * 1000] + [min * 60 * 100]
+
+      const timeStamp = nowTime - timeToSubtract
+
+      const newData = {
+        "name": selectedCoffee, 
+        "cost": coffeeCost 
+      }
+      newGlobalData[timeStamp] = newData
+      console.log(timeStamp, selectedCoffee, coffeeCost)
+    
+
+      // update the global state
+      setGlobalData(newGlobalData)
+
+      // persist the data in the firebase firestore
+      const userRef = doc(db, 'users', globalUser.uid)
+      const res = await setDoc(userRef, {
+        [timeStamp]: newData
+      }, { merge: true})
+
+      setSelectedCoffee(null)
+      setHour(0)
+      setMin(0)
+      setCoffeeCost(0)
+
+    } catch (err) {
+      console.log(err.message)
+    } 
   }
-  
+
 
   function handleCloseModal() {
     setShowModal(false)
