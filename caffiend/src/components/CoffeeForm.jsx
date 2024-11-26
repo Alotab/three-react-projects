@@ -20,6 +20,7 @@ const CoffeeForm = (props) => {
   async function handleSubmitForm() {
     if(!isAuthenticated) {
       setShowModal(true)
+      return
     }
 
     // define a guard cloause that only submits the form if its is completed
@@ -34,9 +35,7 @@ const CoffeeForm = (props) => {
       }
 
       const nowTime = Date.now()
-
       const timeToSubtract = [hour * 60 * 60 * 1000] + [min * 60 * 100]
-
       const timeStamp = nowTime - timeToSubtract
 
       const newData = {

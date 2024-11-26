@@ -16,7 +16,7 @@ function App() {
   // so global data has to exist and the length of the entries is greater than zero
   // if we have zero entries or we just dont have any data in the first place, then we dont have any data
   // we throw !! to an object that can be truthy or falsy value to "make it" a boolean value
-  const isData = globalData && !!Object.keys(globalData || {}.length)
+  const isData = globalData && !!Object.keys(globalData || {}).length
  
 
   const authenticatedContent = (
