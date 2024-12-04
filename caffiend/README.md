@@ -28,10 +28,10 @@ This project is a React application built using:
 1. Clone the repository
 2. Install the dependencies:
 
-`npm install`
+    `npm install`
 
 3. Start the development server:
 
-`npm run dev`
+    `npm run dev`
 
 4. Open http://localhost:5173/ (or the specified development port) in your browser.
