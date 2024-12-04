@@ -1,6 +1,10 @@
 # Caffiend: A React App for Coffee Lovers
 
-![Alt text](<images/Screenshot%20(3).png>)
+![Hero page where it introduces you to what you are getting from this page](<images/Screenshot%20(3).png>)
+
+![This section allows you to track by submitting information about your coffee history with a time frame.](<images/Screenshot (4).png>)
+
+![The Stats section give information about your caffeine level, daily cost, and total cost of Coffee with a time frame](<images/Screenshot (5).png>)
 
 This React app is designed for coffee lovers who want to track their caffeine intake and analyze their habits. It provides a fun and informative way to monitor your coffee consumption and its impact on your finances.
 
