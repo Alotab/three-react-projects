@@ -27,10 +27,15 @@ NOTE:
 Craete an App on your Firebase account. You will need to get all these information from Firebase and store in your .env file for you to be able to sign up or Login user:
 
 VITE_FIREBASE_APIKEY=
+
 VITE_FIREBASE_AUTHDOMAIN=
+
 VITE_FIREBASE_PROJECTID=
+
 VITE_FIREBASE_STORAGEBUCKET=
+
 VITE_FIREBASE_MESSAGINGSENDERID=
+
 VITE_FIREBASE_APPID=
 
 ## To view the application in action:
