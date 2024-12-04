@@ -27,15 +27,10 @@ NOTE:
 Craete an App on your Firebase account. You will need to get all these information from Firebase and store in your .env file for you to be able to sign up or Login user:
 
 ```VITE_FIREBASE_APIKEY=
-
 VITE_FIREBASE_AUTHDOMAIN=
-
 VITE_FIREBASE_PROJECTID=
-
 VITE_FIREBASE_STORAGEBUCKET=
-
 VITE_FIREBASE_MESSAGINGSENDERID=
-
 VITE_FIREBASE_APPID=
 ```
 
@@ -44,10 +39,14 @@ VITE_FIREBASE_APPID=
 1. Clone the repository
 2. Install the dependencies:
 
-   `npm install`
+   ```
+   npm install
+   ```
 
 3. Start the development server:
 
-   `npm run dev`
+   ```
+   npm run dev
+   ```
 
 4. Open http://localhost:5173/ (or the specified development port) in your browser.
