@@ -14,23 +14,23 @@ Welcome to the Pokédex App! This app is designed for Pokémon lovers who want t
 * React – A JavaScript library for building user interfaces
 * Pokémon API – Public API to get Pokémon data, including stats, moves, and images
 
-  ## Installation
-  To get started with the app, clone the repository and install dependencies.
-  1. Clone this repository:
+## Installation
+To get started with the app, clone the repository and install dependencies.
+1. Clone this repository:
      
-     ```git clone https://github.com/Alotab/three-react-projects.git```
-  2. Navigate to the project directory:
+ ```git clone https://github.com/Alotab/three-react-projects.git```
+2. Navigate to the project directory:
      
-     ```cd three-react-projects```
-  3. Navigate to Pokemon directory:
+```cd three-react-projects```
+3. Navigate to Pokemon directory:
      
-     ```cd pokedex```
-  4. Install the required dependencies:
+```cd pokedex```
+4. Install the required dependencies:
      
-     ```npm install```
-  5. Run the app in development mode:
+```npm install```
+5. Run the app in development mode:
    
-     ```npm start```
+```npm start```
 
 ## Usage
 Once the app is running, you will be able to:
