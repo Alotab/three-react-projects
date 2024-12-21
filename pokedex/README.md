@@ -1,5 +1,6 @@
 # Pokerdex
 
+![](<images/>)
 
 Welcome to the Pokédex App! This app is designed for Pokémon lovers who want to explore detailed information about their favorite Pokémon, including images, stats, moves, and more. It's also a great way to demonstrate basic search functionality, API data fetching, and interactive UI in a React app.
 
