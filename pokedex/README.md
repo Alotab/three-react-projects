@@ -1,8 +1,8 @@
 # Pokerdex
 
-![This is the welcome page of the Pokemon app. On the left sidebar, its way to search for any Pokemon character from the API](<images/screenshot (13).png>)
+![This is the welcome page of the Pokemon app. On the left sidebar, its way to search for any Pokemon character from the API](<images/Screenshot (13).png>)
 
-![Searching for Pikchahu and the chracter images and moves showing on the right side of the page](images/screenshot (12).png>)
+![Searching for Pikchahu and the chracter images and moves showing on the right side of the page](images/Screenshot(12).png>)
 
 Welcome to the Pokédex App! This app is designed for Pokémon lovers who want to explore detailed information about their favorite Pokémon, including images, stats, moves, and more. It's also a great way to demonstrate basic search functionality, API data fetching, and interactive UI in a React app.
 
