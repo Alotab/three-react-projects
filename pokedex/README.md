@@ -17,15 +17,15 @@ Welcome to the Pokédex App! This app is designed for Pokémon lovers who want t
   ## Installation
   To get started with the app, clone the repository and install dependencies.
   1. Clone this repository:
-     `git clone https://github.com/Alotab/three-react-projects.git`
+     ```git clone https://github.com/Alotab/three-react-projects.git```
   2. Navigate to the project directory:
-     `cd three-react-projects`
+     ```cd three-react-projects```
   3. Navigate to Pokemon directory:
-     `cd pokedex`
+     ```cd pokedex```
   5. Install the required dependencies:
-     `npm install`
+     ```npm install```
   6. Run the app in development mode:
-     `npm start`
+     ```npm start```
 
 ## Usage
 Once the app is running, you will be able to:
