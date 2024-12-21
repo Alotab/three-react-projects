@@ -25,25 +25,25 @@ To get started with the app, clone the repository and install dependencies.
 git clone https://github.com/Alotab/three-react-projects.git
 ```
 
-3. Navigate to the project directory:
+2. Navigate to the project directory:
    
 ```
 cd three-react-projects
 ```
 
-4. Navigate to Pokemon directory:
+3. Navigate to Pokemon directory:
  
 ```
 cd pokedex
 ```
 
-7. Install the required dependencies:
+4. Install the required dependencies:
  
 ```
 npm install
 ```
 
-10. Run the app in development mode:
+5. Run the app in development mode:
  
 ```
 npm start
