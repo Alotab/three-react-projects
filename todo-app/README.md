@@ -1,7 +1,7 @@
 # React Todo App
 
 ![This is the welcome page of the page with no todos listed untill you start adding some todos](<images/welcome.png>)
-![This is the All section that contains both completed and uncompleted todos](<all.png>)
+![This is the All section that contains both completed and uncompleted todos](<images/all.png>)
 ![This is the section for the completed todo list](<images/completed.png>)
 
 A simple and interactive Todo application built with React. This app allows users to manage their tasks efficiently by adding, deleting, and filtering todos based on their status.
