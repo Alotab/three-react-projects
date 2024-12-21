@@ -6,13 +6,13 @@ Welcome to the Pokédex App! This app is designed for Pokémon lovers who want t
 ## Features
 * Pokémon Search: Easily search for a specific Pokémon by name.
 * Pokémon Details: View detailed information about each Pokémon, including:
-    * Stats: Check out various stats like health, attack, defense, and speed
+    * Stats: Check out various stats like health, attack, defense, and speed.
     * Moves: View a list of moves that the Pokémon can perform, along with detailed descriptions that explain each move when clicked.
     * Images: See images of the Pokémon to bring the characters to life.
 
 ## Tech Stack
-* React – A JavaScript library for building user interfaces
-* Pokémon API – Public API to get Pokémon data, including stats, moves, and images
+* React – A JavaScript library for building user interfaces.
+* Pokémon API – Public API to get Pokémon data, including stats, moves, and images.
 
 ## Installation
 To get started with the app, clone the repository and install dependencies.
